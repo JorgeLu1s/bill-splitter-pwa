@@ -1137,6 +1137,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+circular-json@^0.5.4:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.5.5.tgz#64182ef359042d37cd8e767fc9de878b1e9447d3"
+
 clap@^1.0.9:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/clap/-/clap-1.2.3.tgz#4f36745b32008492557f46412d66d50cb99bce51"
@@ -3016,6 +3020,10 @@ lodash.defaults@^4.2.0:
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
+
+lodash.merge@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
 
 lodash.template@^4.4.0:
   version "4.4.0"
@@ -5207,6 +5215,13 @@ vue@^2.5.2:
 vuetify@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.1.1.tgz#8d8f64306a45aaf862487addae8decf082dac0a3"
+
+vuex-persist@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/vuex-persist/-/vuex-persist-1.4.3.tgz#86825ab566b1624220875138e7ae1793a7d755a0"
+  dependencies:
+    circular-json "^0.5.4"
+    lodash.merge "^4.6.1"
 
 vuex@^3.0.1:
   version "3.0.1"
