@@ -5,11 +5,11 @@
       <v-icon>home</v-icon>
     </v-btn>
     <v-btn flat color="white" value="customer" to="/new">
-      <span>Add customer</span>
+      <span>Add Customer</span>
       <v-icon>person</v-icon>
     </v-btn>
     <v-btn flat color="white" value="groups" to="/newGroup">
-      <span>Add group</span>
+      <span>Add Group</span>
       <v-icon>group</v-icon>
     </v-btn>
   </v-bottom-nav>

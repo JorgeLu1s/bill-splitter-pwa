@@ -1,8 +1,8 @@
 <template>
   <v-app id="app" text-center dark app>
     <Toolbar></Toolbar>
+    <TopNav v-if="browser == 'android'"></TopNav>
     <v-content>
-      <TopNav v-if="browser == 'android'"></TopNav>
       <v-container fluid>
         <router-view></router-view>
       </v-container>
@@ -22,7 +22,6 @@ export default {
   data () {
     return {
       browser: 'computer',
-      text: 'default'
     }
   },
   mounted: function () {

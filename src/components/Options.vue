@@ -5,10 +5,10 @@
     </v-btn>
     <v-list>
       <v-list-tile v-if="global" @click="reset">
-        <v-list-tile-title>Reset</v-list-tile-title>
+        <v-list-tile-title>Reset Data</v-list-tile-title>
       </v-list-tile>
       <v-list-tile v-else @click="remove">
-        <v-list-tile-title>Delete</v-list-tile-title>
+        <v-list-tile-title>Delete Item</v-list-tile-title>
       </v-list-tile>
     </v-list>
   </v-menu>
