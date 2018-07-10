@@ -1,6 +1,6 @@
 <template>
   <v-app id="app" text-center dark app>
-    <v-toolbar color="black" >
+    <v-toolbar color="black" fixed>
       <v-toolbar-title>Bourbon Calculator</v-toolbar-title>
       <v-spacer></v-spacer>
       <Options></Options>
@@ -43,6 +43,7 @@ export default {
 
 <style>
 body {
-  background-color: black;
+  background-color: #303030;
+  padding-top: 60px;
 }
 </style>
