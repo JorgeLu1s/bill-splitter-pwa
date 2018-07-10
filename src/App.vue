@@ -1,10 +1,6 @@
 <template>
   <v-app id="app" text-center dark app>
-    <v-toolbar color="black" fixed>
-      <v-toolbar-title>Bourbon Calculator</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <Options></Options>
-    </v-toolbar>
+    <Toolbar></Toolbar>
     <v-content>
       <TopNav v-if="browser == 'android'"></TopNav>
       <v-container fluid>
@@ -16,13 +12,13 @@
 </template>
 
 <script>
+import Toolbar from '@/components/Toolbar'
 import BottomNav from '@/components/BottomNav'
 import TopNav from '@/components/TopNav'
-import Options from '@/components/Options'
 
 export default {
   name: 'App',
-  components: { BottomNav, Options, TopNav },
+  components: { Toolbar, BottomNav, TopNav },
   data () {
     return {
       browser: 'computer',
