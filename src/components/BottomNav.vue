@@ -4,8 +4,8 @@
       <span>Home</span>
       <v-icon>home</v-icon>
     </v-btn>
-    <v-btn flat color="white" value="customer" to="/new">
-      <span>Add Customer</span>
+    <v-btn flat color="white" value="person" to="/new">
+      <span>Add Person</span>
       <v-icon>person</v-icon>
     </v-btn>
     <v-btn flat color="white" value="groups" to="/newGroup">

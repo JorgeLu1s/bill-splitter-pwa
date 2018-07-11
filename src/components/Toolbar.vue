@@ -6,7 +6,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat to="/">Home</v-btn>
-        <v-btn flat to="new">New Customer</v-btn>
+        <v-btn flat to="new">New Person</v-btn>
         <v-btn flat to="newGroup">New Group</v-btn>
       </v-toolbar-items>
       <Options></Options>
@@ -30,7 +30,7 @@
           </v-list-tile-action>
 
           <v-list-tile-content>
-            <v-list-tile-title>Add Customer</v-list-tile-title>
+            <v-list-tile-title>Add Person</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 

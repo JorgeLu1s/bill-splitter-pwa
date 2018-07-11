@@ -7,10 +7,10 @@
     <br>
 
     <v-list>
-      <v-subheader>Customers</v-subheader>
-      <v-list-tile v-for="customer in customers" :key="customer.id">
+      <v-subheader>People</v-subheader>
+      <v-list-tile v-for="person in people" :key="person.id">
         <v-list-tile-content>
-          <v-checkbox :label="customer.name" type="checkbox" v-model="selected" :id="customer.id" :value="customer.id"></v-checkbox>
+          <v-checkbox :label="person.name" type="checkbox" v-model="selected" :id="person.id" :value="person.id"></v-checkbox>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
@@ -46,14 +46,14 @@ export default {
 
   computed: {
     ...mapGetters({
-      customers: 'getCustomers',
+      people: 'getPeople',
     }),
   },
 
   methods: {
     save: function () {
       if (typeof this.id === 'undefined') {
-        this.group.customers = this.selected
+        this.group.people = this.selected
 
         if (this.selected.length > 0) {
           this.group.individual = this.group.price / this.selected.length
@@ -61,7 +61,7 @@ export default {
 
         this.$store.dispatch('addGroup', this.group)
       } else {
-        this.$store.dispatch('updateGroupCustomers', {groupId: parseInt(this.id), customers: this.selected})
+        this.$store.dispatch('updateGroupPeople', {groupId: parseInt(this.id), people: this.selected})
       }
       this.$router.push('/')
     },
@@ -69,10 +69,10 @@ export default {
 
   mounted: function () {
     if (typeof this.id === 'undefined') {
-      this.group = { id: Date.now(), name: '', price: null, individual: 0, customers: [] }
+      this.group = { id: Date.now(), name: '', price: null, individual: 0, people: [] }
     } else {
       this.group = this.$store.getters.getGroupById(parseInt(this.id))
-      this.selected = this.group.customers
+      this.selected = this.group.people
     }
   }
 }

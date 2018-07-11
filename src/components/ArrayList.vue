@@ -13,7 +13,7 @@
             </v-list-tile-avatar>
             <v-list-tile-content>
               <v-list-tile-title>{{item.name}}</v-list-tile-title>
-              <v-list-tile-sub-title v-if="route === 'customer'">
+              <v-list-tile-sub-title v-if="route === 'person'">
                 {{totalIndividual(item) | currency}} -
                 {{totalIndividual(item) | tip | currency}}
               </v-list-tile-sub-title>
@@ -46,15 +46,15 @@ export default {
   },
   methods: {
 
-    totalIndividual: function (customer) {
-      var total = customer.total
+    totalIndividual: function (person) {
+      var total = person.total
 
       if (this.promo) {
         total = total / 2
       }
 
       this.groups.forEach(group => {
-        if (group.customers.find(id => id === customer.id)) {
+        if (group.people.find(id => id === person.id)) {
           total += group.individual
         }
       })

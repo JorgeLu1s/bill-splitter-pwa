@@ -28,23 +28,23 @@
 
     <br>
 
-    <ArrayList :items="customers" title="Customers" route="customer"></ArrayList>
+    <ArrayList :items="people" title="People" route="person"></ArrayList>
     <ArrayList :items="groups" title="Groups" route="group"></ArrayList>
   </div>
 </template>
 
 <script>
-import Customer from '@/components/Customer'
+import Person from '@/components/Person'
 import ArrayList from '@/components/ArrayList'
 import BottomNav from '@/components/BottomNav'
 import {mapState, mapGetters, mapActions} from 'vuex'
 
 export default {
   name: 'Index',
-  components: { Customer, ArrayList, BottomNav },
+  components: { Person, ArrayList, BottomNav },
   computed: {
     ...mapGetters({
-      customers: 'getCustomers',
+      people: 'getPeople',
       total: 'getTotal',
       groups: 'getGroups',
       tip: 'getTip',
@@ -70,9 +70,9 @@ export default {
       togglePromo: 'togglePromo'
     }),
 
-    isInGroup: function (customer, groupId) {
+    isInGroup: function (person, groupId) {
 
-      this.group.customers.find(c => c.id === customer.id)
+      this.group.people.find(c => c.id === person.id)
     },
   },
 }

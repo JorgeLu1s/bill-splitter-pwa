@@ -13,22 +13,22 @@ export default new Vuex.Store({
   plugins: [vuexLocalStorage.plugin],
 
   state: {
-    customers: [],
+    people: [],
     groups: [],
     promo: true
   },
 
   getters: {
-    getCustomers (state) {
-      return state.customers
+    getPeople (state) {
+      return state.people
     },
 
     getGroups (state) {
       return state.groups
     },
 
-    getCustomerById: (state) => (id) => {
-      return state.customers.find(customer => customer.id === id)
+    getPersonById: (state) => (id) => {
+      return state.people.find(person => person.id === id)
     },
 
     getGroupById: (state) => (id) => {
@@ -42,8 +42,8 @@ export default new Vuex.Store({
     getTotal (state) {
       var total = 0
 
-      state.customers.forEach(customer => {
-        total += parseInt(customer.total)
+      state.people.forEach(person => {
+        total += parseInt(person.total)
       })
 
       if (state.promo) {
@@ -67,8 +67,8 @@ export default new Vuex.Store({
   },
 
   actions: {
-    addCustomer ({commit}, customer) {
-      commit('pushCustomer', customer)
+    addPerson ({commit}, person) {
+      commit('pushPerson', person)
     },
 
     addGroup ({commit}, group) {
@@ -79,19 +79,19 @@ export default new Vuex.Store({
       commit('togglePromo')
     },
 
-    updateGroupCustomers ({commit, getters}, {groupId, customers}) {
+    updateGroupPeople ({commit, getters}, {groupId, people}) {
       var group = getters.getGroupById(groupId)
-      group.customers = customers
+      group.people = people
 
-      if (group.customers.length > 0) {
-        group.individual = group.price / group.customers.length
+      if (group.people.length > 0) {
+        group.individual = group.price / group.people.length
       } else {
         group.individual = 0
       }
     },
 
-    removeCustomer ({commit}, customerId) {
-      commit('removeCustomer', customerId)
+    removePerson ({commit}, personId) {
+      commit('removePerson', personId)
     },
 
     resetData ({commit}) {
@@ -104,8 +104,8 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    pushCustomer (state, customer) {
-      state.customers.push(customer)
+    pushPerson (state, person) {
+      state.people.push(person)
     },
 
     pushGroup (state, group) {
@@ -116,12 +116,12 @@ export default new Vuex.Store({
       state.promo = !state.promo
     },
 
-    removeCustomer (state, customerId) {
-      state.customers = state.customers.filter(c => c.id !== customerId)
+    removePerson (state, personId) {
+      state.people = state.people.filter(c => c.id !== personId)
     },
 
     resetData (state) {
-      state.customers = []
+      state.people = []
       state.groups = []
     },
 

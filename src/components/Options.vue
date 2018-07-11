@@ -44,9 +44,9 @@ export default {
 
     remove: function () {
       switch (this.$route.name) {
-        case 'newCustomer':
-        case 'customer':
-          this.$store.dispatch('removeCustomer', this.$route.params.id)
+        case 'newPerson':
+        case 'person':
+          this.$store.dispatch('removePerson', this.$route.params.id)
           this.$router.push('/')
           break;
         case 'newGroup':

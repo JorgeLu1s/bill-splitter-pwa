@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import Customer from '@/components/Customer'
+import Person from '@/components/Person'
 import Group from '@/components/Group'
 
 Vue.use(Router)
@@ -15,13 +15,13 @@ export default new Router({
     },
     {
       path: '/new',
-      name: 'newCustomer',
-      component: Customer,
+      name: 'newPerson',
+      component: Person,
     },
     {
-      path: '/customer/:id',
-      name: 'customer',
-      component: Customer,
+      path: '/person/:id',
+      name: 'person',
+      component: Person,
       props: true
     },
     {
